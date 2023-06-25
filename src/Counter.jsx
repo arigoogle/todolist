@@ -19,6 +19,7 @@ export function Counter() {
 
   function decrementCount() {
     setCount(prevCount => prevCount -1);
+    setTheme('black')
   }
 
   return (
