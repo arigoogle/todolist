@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import './style.css';
 import { NewTodoForm } from './NewTodosForm';
 import { TodoList } from './TodoList';
+import { Counter } from './Counter';
 
 export default function App() {
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS")
     if(localValue == null) return []
-    
+
     return JSON.parse(localValue)
   });
 
@@ -52,6 +53,9 @@ export default function App() {
         toggleTodo={toggleTodo}
         deleteTodo={deleteTodo}
       />
+      <br />
+      <Counter/>
     </>
   );
 }
+
